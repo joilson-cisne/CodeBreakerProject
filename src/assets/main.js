@@ -23,3 +23,8 @@ function setHiddenFields() {
     randomNumber = Math.floor(Math.random() * 10000);
     answer.value = randomNumber.pad(4);
 }
+
+function setMessage(text) {
+    message = document.getElementById('message');
+    message.innerHTML = text;
+}
