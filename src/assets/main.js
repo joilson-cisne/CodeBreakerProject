@@ -7,6 +7,14 @@ function guess() {
 }
 
 //implement new functions here
+Number.prototype.pad = function(size) {
+    var s = String(this);
+    while (s.length < (size || 2)) {s = "0" + s;}
+    return s;
+  }
+  
+
 function setHiddenFields() {
-    answer = Math.floor(Math.random() * 10000);
+    randomNumber = Math.floor(Math.random() * 10000);
+    answer = randomNumber.pad(4);
 }
