@@ -4,7 +4,7 @@ let attempt = document.getElementById('attempt');
 function guess() {
     let input = document.getElementById('user-guess');
     //add functionality to guess function here
-    if (!answer && !attempt) {
+    if (!answer.value && !attempt.value) {
         setHiddenFields();
     }
 }
@@ -18,8 +18,8 @@ Number.prototype.pad = function(size) {
   
 
 function setHiddenFields() {
-    attempt = 0;
+    attempt.value = 0;
 
     randomNumber = Math.floor(Math.random() * 10000);
-    answer = randomNumber.pad(4);
+    answer.value = randomNumber.pad(4);
 }
