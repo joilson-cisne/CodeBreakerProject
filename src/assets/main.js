@@ -2,6 +2,8 @@ let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
 let results = document.getElementById('results');
 let code = document.getElementById('code');
+let guessingDiv = document.getElementById('guessing-div');
+let replayDiv = document.getElementById('replay-div');
 
 function guess() {
     let input = document.getElementById('user-guess');
@@ -84,4 +86,9 @@ function showAnswer(win) {
     } else {
         code.classList.add("failure");
     }
+}
+
+function showReplay() {
+    guessingDiv.style.display = 'none';
+    replayDiv.style.display = 'block';
 }
