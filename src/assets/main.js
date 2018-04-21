@@ -1,6 +1,7 @@
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
 let results = document.getElementById('results');
+let code = document.getElementById('code');
 
 function guess() {
     let input = document.getElementById('user-guess');
@@ -73,4 +74,14 @@ function getResults(input) {
     results.innerHTML = html;
 
     return input === answer.value;
+}
+
+function showAnswer(win) {
+    code.innerHTML = answer.value;
+
+    if (win) {
+        code.classList.add("success");
+    } else {
+        code.classList.add("failure");
+    }
 }
