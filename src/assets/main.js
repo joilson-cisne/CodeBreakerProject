@@ -1,5 +1,6 @@
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
+let results = document.getElementById('results');
 
 function guess() {
     let input = document.getElementById('user-guess');
@@ -42,4 +43,22 @@ function validateInput(input) {
 
     setMessage("Guesses must be exactly 4 characters long.");
     return false;
+}
+
+function getResults(input) {
+    let html = `<div class="row"><span class="col-md-6">' ${input} '</span><div class="col-md-6">`;
+    
+    for (let i = 0; i < input.length; i++) {
+        const digit = input[i];
+        
+        if (answer.value[i] === digit) {
+            html += `<span class="glyphicon glyphicon-ok"></span>`;
+        } else if (answer.value.indexOf(digit) > -1) {
+            html += `<span class="glyphicon glyphicon-transfer"></span>`;
+        } else {
+            html += `<span class="glyphicon glyphicon-remove"></span>`;
+        }
+    }
+    
+    results.innerHTML = html;
 }
