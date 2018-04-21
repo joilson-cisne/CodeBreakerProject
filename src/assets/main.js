@@ -22,6 +22,8 @@ function guess() {
 
     if (win) {
         setMessage("You Win! :)");
+        showAnswer(win);
+        showReplay();
     } else if (Number(attempt.value) >= 10) {
         setMessage("You Lose! :(");
     } else {
