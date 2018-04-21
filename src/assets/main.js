@@ -14,6 +14,16 @@ function guess() {
     }
 
     attempt.value = Number(attempt.value) + 1;
+
+    const win = getResults(input.value);
+
+    if (win) {
+        setMessage("You Win! :)");
+    } else if (Number(attempt.value) >= 10) {
+        setMessage("You Lose! :(");
+    } else {
+        setMessage("Incorrect, try again.");
+    }
 }
 
 //implement new functions here
@@ -61,4 +71,6 @@ function getResults(input) {
     }
     
     results.innerHTML = html;
+
+    return input === answer.value;
 }
